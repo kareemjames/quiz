@@ -28,4 +28,12 @@ public class QuizQuestion {
     public void checkAnswer() {
 
     }
+
+    @Override
+    public String toString() {
+        return "QuizQuestion{" +
+                "question='" + question + '\'' +
+                ", answer='" + answer + '\'' +
+                '}';
+    }
 }

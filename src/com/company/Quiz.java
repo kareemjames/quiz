@@ -17,7 +17,7 @@ public class Quiz {
         questionBank.setInitialQuestionsAndAnswers(this);
 //        questionBank.printQuestions();
 //        questionBank.printAnswers();
-        questionBank.fiveRandomQuestion();
+        //questionBank.fiveRandomQuestion();
         //System.out.println(startQuestions);
         System.out.println(startQuestions.size() + " game start");
 
