@@ -1,15 +1,12 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class QuestionBank {
     private ArrayList<QuizQuestion> questions = new ArrayList<>();
     private ArrayList<QuizQuestion> fiveQuestions = new ArrayList<>();
-    Random random = new Random();
-    int nextRandom;
-
+    private Random random = new Random();
 
     public void printQuestions() {
         System.out.println(questions);
@@ -85,12 +82,16 @@ public class QuestionBank {
     public void fiveRandomQuestions() {
 
         for (int i = 0; i < questions.size(); i++) {
-            nextRandom = random.nextInt(questions.size() - i);
+            int nextRandom = random.nextInt(questions.size() - i);
             QuizQuestion value = questions.get(i);
             fiveQuestions.add(value);
             questions.remove(nextRandom);
         }
         System.out.println(fiveQuestions);
+    }
+
+    public ArrayList<QuizQuestion> getFiveQuestions() {
+        return fiveQuestions;
     }
 
 }
