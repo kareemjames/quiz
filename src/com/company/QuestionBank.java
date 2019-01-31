@@ -19,7 +19,7 @@ public class QuestionBank {
         questions.add(quizQuestion);
     }
 
-    public void setInitialQuestionsAndAnswers(Quiz x) {
+    public void setInitialQuestionsAndAnswers() {
 
         addQuestionAndAnswer(new QuizQuestion(("Which actor does not appear in 'Saving Private Ryan?\n"
                 + "Giovanni Ribisi\n"
@@ -80,20 +80,18 @@ public class QuestionBank {
                 + "CR-V\n"
                 + "Silverado 1500\n"),"F-150"));
 
-        System.out.println(questions);
-
     }
 
-//    public void fiveRandomQuestion() {
-//
-//        for (int i = 0; i < questions.size(); i++) {
-//            nextRandom = random.nextInt(questions.size() - i);
-//            String value = questions.get(i);
-////            System.out.println(value);
-//            quiz.addQuestion(value);
-//            questions.remove(nextRandom);
-//        }
-//    }
+    public void fiveRandomQuestions() {
+
+        for (int i = 0; i < questions.size(); i++) {
+            nextRandom = random.nextInt(questions.size() - i);
+            QuizQuestion value = questions.get(i);
+            fiveQuestions.add(value);
+            questions.remove(nextRandom);
+        }
+        System.out.println(fiveQuestions);
+    }
 
 }
 

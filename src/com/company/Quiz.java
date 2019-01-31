@@ -14,10 +14,10 @@ public class Quiz {
     public void gameStart() {
 
 
-        questionBank.setInitialQuestionsAndAnswers(this);
+        questionBank.setInitialQuestionsAndAnswers();
 //        questionBank.printQuestions();
 //        questionBank.printAnswers();
-        //questionBank.fiveRandomQuestion();
+        questionBank.fiveRandomQuestions();
         //System.out.println(startQuestions);
         System.out.println(startQuestions.size() + " game start");
 
