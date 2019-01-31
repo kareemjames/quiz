@@ -83,11 +83,11 @@ public class QuestionBank {
 
         for (int i = 0; i < questions.size(); i++) {
             int nextRandom = random.nextInt(questions.size() - i);
-            QuizQuestion value = questions.get(i);
+            QuizQuestion value = questions.get(nextRandom);
             fiveQuestions.add(value);
             questions.remove(nextRandom);
         }
-        System.out.println(fiveQuestions);
+        //System.out.println(fiveQuestions);
     }
 
     public ArrayList<QuizQuestion> getFiveQuestions() {
