@@ -1,20 +1,20 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class QuestionBank {
-    private ArrayList<String> questions = new ArrayList<>();
-    private ArrayList<String> answers = new ArrayList<>();
+    private ArrayList<QuizQuestion> questions = new ArrayList<>();
+    private ArrayList<QuizQuestion> fiveQuestions = new ArrayList<>();
+    private ArrayList<String> test;
+    private Quiz quiz;
+
     Random random = new Random();
     int nextRandom;
 
-    public void addQuestion(String x) {
+    public void addQuestionAndAnswer(QuizQuestion x) {
         questions.add(x);
-    }
-
-    public void addAnswer(String x) {
-        answers.add(x);
     }
 
     public void printQuestions() {
@@ -25,14 +25,15 @@ public class QuestionBank {
         System.out.println(answers);
     }
 
-    public void setInitialQuestionsAndAnswers() {
+    public void setInitialQuestionsAndAnswers(Quiz x) {
 
-        String q1 = "Which actor does not appear in 'Saving Private Ryan?\n"
-                + "Giovanni Ribisi\n"
-                + "Vin Diesel\n"
-                + "Tom Hanks\n"
-                + "Ralph Fiennes\n";
-        String a1 = "Ralph Fiennes";
+        this.quiz = x;
+
+         addQuestionAndAnswer(new QuizQuestion(("Which actor does not appear in 'Saving Private Ryan?\n"
+                 + "Giovanni Ribisi\n"
+                 + "Vin Diesel\n"
+                 + "Tom Hanks\n"
+                 + "Ralph Fiennes\n"), "Ralph Fiennes"));
 
         String q2 = "How many blue stripes does the United States of America national flag have?\n"
                 + "13\n"
@@ -124,8 +125,6 @@ public class QuestionBank {
 
     public void fiveRandomQuestion() {
 
-        Quiz quiz = new Quiz();
-
         for(int i = 0; i < questions.size(); i++) {
             nextRandom = random.nextInt(questions.size() - i);
             String value = questions.get(i);
@@ -136,3 +135,6 @@ public class QuestionBank {
     }
 
 }
+
+/*The issue I was having here is that I was instantiating a new quiz object inside of the fiveRandomQuestion method and saving the value to that objects array instead of the originating Quiz object. The fix was to pass the whole Quiz object by creating a variable Quiz quiz; change setInitialQuestion method to accept a quiz object and then when I make the  method call in quiz, I pass the THIS (this referring to itself) object and set this.quiz to x(which is the passed object) and then it works as expected. This is an inefficient way to deal with this and I am going to solve it in a better fashion. I just wanted to document because I forgot to save it working at that point.
+*/

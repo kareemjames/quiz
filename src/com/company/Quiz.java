@@ -13,18 +13,23 @@ public class Quiz {
 
     public void gameStart() {
 
-        questionBank.setInitialQuestionsAndAnswers();
+
+        questionBank.setInitialQuestionsAndAnswers(this);
 //        questionBank.printQuestions();
 //        questionBank.printAnswers();
         questionBank.fiveRandomQuestion();
-        System.out.println(startQuestions);
+        //System.out.println(startQuestions);
+        System.out.println(startQuestions.size() + " game start");
 
     }
 
     public void addQuestion(String x) {
-        System.out.println( "This is " + x + " at add question method");
+        System.out.println( "This is ==> " + x + " <== at add question method");
         startQuestions.add(x);
+        System.out.println(startQuestions.size());
     }
 
 
 }
+
+

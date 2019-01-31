@@ -24,4 +24,8 @@ public class QuizQuestion {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
+
+    public void checkAnswer() {
+
+    }
 }
