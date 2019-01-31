@@ -14,5 +14,13 @@ public class QuestionBank {
         answers.add(x);
     }
 
+    public void printQuestions() {
+        System.out.println(questions);
+    }
+
+    public void printAnswers() {
+        System.out.println(answers);
+    }
+
 
 }
