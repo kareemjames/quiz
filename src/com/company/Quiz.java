@@ -10,7 +10,7 @@ public class Quiz {
 
     public void gameStart() {
 
-        String q1 = "Which actor does not appear in 'Saving Private Ryan\n?"
+        String q1 = "Which actor does not appear in 'Saving Private Ryan?\n"
                 + "Giovanni Ribisi\n"
                 + "Vin Diesel\n"
                 + "Tom Hanks\n"
@@ -68,8 +68,25 @@ public class Quiz {
 
         questionBank.addQuestion(q1);
         questionBank.addAnswer(a1);
+        questionBank.addQuestion(q2);
+        questionBank.addAnswer(a2);
+        questionBank.addQuestion(q3);
+        questionBank.addAnswer(a3);
+        questionBank.addQuestion(q4);
+        questionBank.addAnswer(a4);
+        questionBank.addQuestion(q5);
+        questionBank.addAnswer(a5);
+        questionBank.addQuestion(q6);
+        questionBank.addAnswer(a6);
+        questionBank.addQuestion(q7);
+        questionBank.addAnswer(a7);
+        questionBank.addQuestion(q8);
+        questionBank.addAnswer(a8);
 
-        System.out.println("Welcome to the gameshow");
+        questionBank.printQuestions();
+        questionBank.printAnswers();
+
+
     }
 
 
