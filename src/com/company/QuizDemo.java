@@ -1,11 +1,18 @@
 package com.company;
 
 public class QuizDemo {
+    static Quiz quiz = new Quiz();
 
     public static void main(String[] args) {
-        Quiz quiz = new Quiz();
 
+        while(quiz.isPlaying()) {
+            gameStartLoop();
+        }
+
+
+    }
+
+    public static void gameStartLoop() {
         quiz.gameStart();
-
     }
 }

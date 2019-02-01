@@ -7,9 +7,15 @@ public class Quiz {
 
     private ArrayList<QuizQuestion> startQuestions = new ArrayList<>();
 
-    ScoreKeeper scoreKeeper = new ScoreKeeper();
+    private ScoreKeeper scoreKeeper = new ScoreKeeper();
     private QuestionBank questionBank = new QuestionBank();
-    Scanner scan = new Scanner(System.in);
+    private Scanner scan = new Scanner(System.in);
+    private String userInput;
+    private boolean isPlaying = true;
+
+    public boolean isPlaying() {
+        return isPlaying;
+    }
 
     public void gameStart() {
 
@@ -22,7 +28,7 @@ public class Quiz {
 
         for(int i = 0; i < startQuestions.size(); i++) {
             System.out.println(startQuestions.get(i).getQuestion());
-            String userInput = scan.nextLine();
+                userInput = scan.nextLine();
             if(userInput.equalsIgnoreCase(startQuestions.get(i).getAnswer())) {
                 System.out.println("Congratulations, you got the answer correct!\n");
                 scoreKeeper.increaseScore();
@@ -36,7 +42,25 @@ public class Quiz {
             }
         }
 
-        System.out.println(scoreKeeper.getScore());
+        System.out.println("You got " + scoreKeeper.getScore() + "/" + startQuestions.size() + " correct");
+
+        if(scoreKeeper.getScore() <= 3) {
+            System.out.println("Guess you Dumb, huh!");
+        } else {
+            System.out.println("I knew you was smart the minute I laid eyes on you");
+        }
+
+        System.out.println("Would you like to play again?\n" +
+                "y or n");
+        userInput = scan.nextLine();
+        if(userInput.equalsIgnoreCase("y")) {
+            isPlaying = true;
+        } else {
+            System.out.println("Thanks for playing, see you next time!");
+            isPlaying = false;
+        }
+
+
 
     }
 
